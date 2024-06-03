@@ -3,7 +3,7 @@
 // icon-color: red; icon-glyph: chart-pie;
 const VERSION = '1.0.0';
 
-const DEBUG = true;
+const DEBUG = false;
 const log = (args) => {
 
     if (DEBUG) {
@@ -224,7 +224,7 @@ const createWidget = async (widgetFamily) => {
 
         widget.backgroundImage = m_Canvas.getImage();
 
-        if (data.onLine) {
+        if (!data.onLine) {
             const stack = widget.addStack();
             stack.layoutHorizontally();
             stack.centerAlignContent();
